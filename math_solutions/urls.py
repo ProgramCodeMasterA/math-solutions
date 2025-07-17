@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from forum import views as forum_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('forum/', forum_views.math_forum, name="forum"),
 ]
