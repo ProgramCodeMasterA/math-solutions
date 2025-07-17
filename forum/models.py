@@ -12,17 +12,14 @@ MATH_CHOICES = (('arithmetic','Arithmetic'),
     ('topology','Topology')
 )
 
-SOLUTION_STATUS = (('unsolved','Unsolved'),
-    ('solved','Solved')
-)
 
 # Create your models here.
 class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="forum_posts"
     )
-    content = models.CharField(max_length=200, unique=True)
-    area = models.CharField(max_length=15, choices=MATH_CHOICES, default='arithmetic')
-    outcome = models.CharField(max_length=10, choices=SOLUTION_STATUS, default='unsolved')
-    created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    content = models.CharField(max_length=200, unique=True) # Type in the content of your math problem
+    area = models.CharField(max_length=15, choices=MATH_CHOICES, default='arithmetic')  # Choose which category of Maths the problem is
+    problem = models.BooleanField(default=False)    # True/False if math problem is solved
+    created_on = models.DateTimeField(auto_now_add=True)    # Add DateTine field
+    status = models.IntegerField(choices=STATUS, default=0) # Define if object is a draft or is published post
