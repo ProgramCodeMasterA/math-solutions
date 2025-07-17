@@ -2,18 +2,18 @@ from django.db import models
 from django.contrib.auth.models import User
 
 STATUS = ((0, "Draft"), (1, "Published"))
-MATH_CHOICES = (('arithmetic'),
-    ('algebra'),
-    ('analysis'),
-    ('calculus'),
-    ('combinatorics'),
-    ('geometry'),
-    ('probability'),
-    ('topology')
+MATH_CHOICES = (('arithmetic','Arithmetic'),
+    ('algebra','Algebra'),
+    ('analysis','Analysis'),
+    ('calculus','Calculus'),
+    ('combinatorics','Combinatorics'),
+    ('geometry','Geomoetry'),
+    ('probability','Probability'),
+    ('topology','Topology')
 )
 
-SOLUTION_STATUS = (('unsolved'),
-    ('solved')
+SOLUTION_STATUS = (('unsolved','Unsolved'),
+    ('solved','Solved')
 )
 
 # Create your models here.
